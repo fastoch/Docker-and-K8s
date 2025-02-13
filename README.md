@@ -1,6 +1,8 @@
 # Docker Containers & Kubernetes Fundamentals
 
-src = https://www.youtube.com/watch?v=kTp5xUtcalw  
+**Resources**:
+- https://www.youtube.com/watch?v=kTp5xUtcalw
+- https://github.com/K8sAcademy/Fundamentals-HandsOn
 
 ---
 
@@ -33,8 +35,20 @@ After that, there will be a few additional steps to make sure K8s operates corre
 - start K8s services
 - ensure all services are running
 
+Next, you should start VS Code and clone the following repo: https://github.com/K8sAcademy/Fundamentals-HandsOn  
+You can also install Git, configure it with your email and username, and run `git clone <repository-url> <target-directory>`  
+
+---
+
+# Microservices Architecture vs Monolithic Architecture
+
+## Monolithic Architecture
+
+- systems (or applications) built and deployed as one single unit
+- to scale the appication, we need to duplicate the 
 
 
-@4/356
+
+@5/356
 ---
 EOF
