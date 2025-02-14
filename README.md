@@ -98,7 +98,8 @@ Within a short time, **cloud native** has become a driving trend in the software
 
 ## Loosely Coupled Systems in Microservices
 
-In a microservices architecture, functionalities are exposed through APIs (Application Programming Interfaces), which reduces the bound between services.   
+In a microservices architecture, functionalities are exposed through APIs (Application Programming Interfaces),  
+which means systems (or sub-systems) are loosely coupled in comparison to the strong bound they share in a monolithic architecture.   
 
 In the context of microservices, **loosely coupled systems** refer to an architectural design where individual services operate independently,  
 allowing changes in one service without necessitating changes in others.  
@@ -107,9 +108,25 @@ This **independence** is crucial for maintaining system **stability** and enhanc
 When services are loosely coupled, they communicate through well-defined interfaces, typically **APIs**, which abstract their internal implementations  
 and facilitate interaction without tight dependencies.  
 
+## Speed & Agility
+
+The end users want:
+- instantaneous response 
+- most up-to-date features
+- no downtime
+
+Businesses want:
+- accelerated innovation
+- rapid release of features to meet disruption from competitors
+- increased confidence due to improved stability/performance
+
+## Cloud Native Architecture characteristics
+
+- infrastructure becomes immutable and disposable, meaning we never do updates, we just put the infrastructure down and we replace it with a new one
+- the provisioning of a new infrastructure happens in minutes, and the existing one can be destroyed as fast, this process can even be automated
+- 
 
 
-
-@16/356
+@18/356 (5%)
 ---
 EOF
