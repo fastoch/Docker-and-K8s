@@ -9,8 +9,7 @@
 # Setup
 
 In this course, we will use VS Code with the Docker extension.  
-
-We need to install Docker and Kubernetes (K8s) on Arch Linux. For that, we will:
+We also need to install Docker and Kubernetes (K8s). On Arch Linux, you need to:
 - update the system,
 - install the docker packages,
 - start the Docker service and enable it to run at boot,
@@ -18,6 +17,8 @@ We need to install Docker and Kubernetes (K8s) on Arch Linux. For that, we will:
 - install K8s,
 - Verify the installation by checking the version of `kubectl` (the Kubernetes command-line tool),
 - start and enable the kubelet service
+
+All of the above steps correspond to the following commands:
 ```bash
 sudo pacman -Syu
 sudo pacman -S docker docker-compose docker-buildx
@@ -65,7 +66,9 @@ This model also enables autonomous development by different teams, using differe
 
 ---
 
-# 
+# Microservices - benefits & drawbacks
+
+
 
 
 @11/356
