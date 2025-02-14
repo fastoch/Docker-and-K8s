@@ -55,10 +55,19 @@ Which allows to scale the application more easily, by scaling each of the servic
 
 This model also enables autonomous development by different teams, using different languages and platorms.  
 
+---
+
+# Microservices Anti Patterns
+
+- too much small units = risk of unnecessary complexity
+- securing all microservices can turn out to be complex too
+- implementing DevOps practices demands time and resources
+
+---
+
+# 
 
 
-
-
-@8/356
+@11/356
 ---
 EOF
