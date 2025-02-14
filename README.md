@@ -68,9 +68,39 @@ This model also enables autonomous development by different teams, using differe
 
 # Microservices - benefits & drawbacks
 
+## Benefits
+
+- since each microservice runs in its own address space, there are less chances that if one them goes down it takes the whole system down with it
+- microservices run on open-source technologies, so there's less vendor lock-in
+- smaller pieces of software are easier to understand in most cases
+- smaller also means faster to deploy
+- microservices are easier to scale, rather than having to scale the whole application each time 
+
+## Drawbacks
+
+- added complexity: is your team properly trained for using Docker & K8s?
+- one microservice update can impact many microservices
+- multiple databases management can be tricky
+- **calls** between microservices will go through **APIs**, which can induce latency issues
+- potential transient errors (temporary disruptions) require the use of a **service mesh**
+  - A service mesh is an infrastructure layer that manages communication between microservices in a distributed application
+- can you system survive if one microservice goes down?
+- what about security? can your microservices communicate in a secure manner?
+
+---
+
+# Cloud Native
+
+Within a short time, **cloud native** has become a driving trend in the software industry.
+- it's a new way to think about building complex systems (or complex applications)
+- it takes full advantage of modern software development practices, technologies, and cloud infrastructure
+- it's widely popular in the open-source community
+
+## Loosely Coupled Systems in Microservices
+
+In the context of microservices, loosely coupled systems refer to an architectural design where individual services operate independently.
 
 
-
-@11/356
+@15/356
 ---
 EOF
