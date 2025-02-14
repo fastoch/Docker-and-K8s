@@ -44,11 +44,21 @@ You can also install Git, configure it with your email and username, and run `gi
 
 ## Monolithic Architecture
 
-- systems (or applications) built and deployed as one single unit
-- to scale the appication, we need to duplicate the 
+- the whole application is built and deployed as **one big single unit**
+- not convenient for scaling the application, because we need to set new servers up, then duplicate the entire project on each server
+
+## Microservices 
+
+We break our big traditional monolithic application into small functional units.  
+We segragate functionality into smaller separate services, each with a single responsibility.  
+Which allows to scale the application more easily, by scaling each of the services independently from the others.  
+
+This model also enables autonomous development by different teams, using different languages and platorms.  
 
 
 
-@5/356
+
+
+@8/356
 ---
 EOF
