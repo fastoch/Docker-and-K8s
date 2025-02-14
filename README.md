@@ -70,7 +70,7 @@ This model also enables autonomous development by different teams, using differe
 
 ## Benefits
 
-- since each microservice runs in its own address space, there are less chances that if one them goes down it takes the whole system down with it
+- If one service fails, it does not bring down the entire system, making it more resilient to errors
 - microservices run on open-source technologies, so there's less vendor lock-in
 - smaller pieces of software are easier to understand in most cases
 - smaller also means faster to deploy
@@ -98,9 +98,18 @@ Within a short time, **cloud native** has become a driving trend in the software
 
 ## Loosely Coupled Systems in Microservices
 
-In the context of microservices, loosely coupled systems refer to an architectural design where individual services operate independently.
+In a microservices architecture, functionalities are exposed through APIs (Application Programming Interfaces), which reduces the bound between services.   
+
+In the context of microservices, **loosely coupled systems** refer to an architectural design where individual services operate independently,  
+allowing changes in one service without necessitating changes in others.  
+
+This **independence** is crucial for maintaining system **stability** and enhancing development **agility**.  
+When services are loosely coupled, they communicate through well-defined interfaces, typically **APIs**, which abstract their internal implementations  
+and facilitate interaction without tight dependencies.  
 
 
-@15/356
+
+
+@16/356
 ---
 EOF
