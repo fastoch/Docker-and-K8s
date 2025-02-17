@@ -145,12 +145,41 @@ Businesses want:
 - when using CI/CD techniques (automation), containers are even faster to deploy
 - you can run containers **anywhere**, you don't need to worry about compatibility since containers are self-sufficient (autonomous)
 - containers are isolated from each other and from the host system, which is better for security and for limiting the impact in case of failure
+  - if one container fails, it will not take the whole system down with it
+
+## VM vs Container
+
+Containers and Virtual Machines (VMs) are both virtualization methods that isolate computing environments,  
+but they differ in their approach, scale, and portability.  
+
+**VMs virtualize the hardware, while containers virtualize the operating system.**  
+
+Unlike VMs, containers don't have to boot, because they use the host kernel, which means they can start much faster.  
+Containers also use much less memory and storage space, since there's no OS.
+
+### VMs
+
+**VMs virtualize physical machines**, allowing efficient use of hardware resources.  
+A **hypervisor**, a virtualization software, is installed on a physical server (host computer) to emulate multiple guest operating systems.  
+**Each VM runs a complete operating system with its own kernel**.  
+The hypervisor coordinates resource sharing, enabling VMs to run in isolation on the same hardware.
+
+### Containers
+
+**Containers package software with all its dependencies**, allowing it to run consistently across different environments.  
+They virtualize the operating system, **allowing applications to run independently on any platform**.  
+Instead of a hypervisor, containers use a **container engine** (like Docker) that acts as an intermediary between the containers and the operating system.  
+Because **containers share the host OS kernel**, they are more lightweight than VMs.  
+
+## Summary
+
+VMs have a larger footprint and are slow to boot, but despite the rise of containers, they still have important use cases.  
+VMs and containers can be seen as complementary technologies, as containers can even run within VMs.  
+
+Containers are lightweight, can start in seconds, offer portability and scalability.  
 
 
 
-
-
-
-@25/356 (7%)
+@27/356 (7%)
 ---
 EOF
