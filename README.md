@@ -191,10 +191,25 @@ Docker uses a local cache to store the containers' images, and if a layer alread
 One of the goal when creating new container images is to create them with the smallest number of layers possible.  
 Later on, we'll see techniques on how to achieve that.  
 
+**Can we write on these layers?**
+No, except for the top one. The lower layers are read-only.  
+
+## Container registry
+
+A container registry is a centralized container repository where you deploy the container images you create.  
+Think GitHub but for containers.  
+
+The most popular one is certainly the **Docker Hub** - https://hub.docker.com  
+It provides public and private repositories.  
+
+All major cloud providers such as AWS, GCP, or Azure have container registry services.  
 
 
 
 
-@29/356 (8%)
+
+
+
+@30/356 (8%)
 ---
 EOF
