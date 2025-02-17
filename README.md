@@ -174,12 +174,27 @@ Because **containers share the host OS kernel**, they are more lightweight than 
 ## Summary
 
 VMs have a larger footprint and are slow to boot, but despite the rise of containers, they still have important use cases.  
-VMs and containers can be seen as complementary technologies, as containers can even run within VMs.  
+VMs and containers can be seen as complementary technologies, as containers can even run within VMs...  
 
-Containers are lightweight, can start in seconds, offer portability and scalability.  
+Containers are lightweight, can start in seconds, offer portability and scalability, which makes them a better choice for Developers and DevOps teams in general.  
+
+## Containers are made of layers
+
+- base OS
+- customizations
+- your application
+
+The `docker pull` command retrieves and downloads a container image.  
+Each layer of this image is downloaded individually.  
+Docker uses a local cache to store the containers' images, and if a layer already exists on the host system, it will not be downloaded again.  
+
+One of the goal when creating new container images is to create them with the smallest number of layers possible.  
+Later on, we'll see techniques on how to achieve that.  
 
 
 
-@27/356 (7%)
+
+
+@29/356 (8%)
 ---
 EOF
