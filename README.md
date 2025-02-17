@@ -230,18 +230,37 @@ The Docker application provides:
 
 # installing and using Docker
 
-- install and enable WSL2 if you're running Windows 10 or 11, so you can run a Linux system within Windows
-  - you can easily find detailed procedures on the Web
-  - open Windows terminal, and run `wsl -l --online` to see all available distros
+if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system within Windows. You can easily find detailed procedures on the Web.
+
+  - once WSL2 has been enabled, open Windows Terminal, and run `wsl -l --online` to see all available distros
   - install your distro of choice, for example: `wsl --install Ubuntu-24.04`
-- then, install Docker Desktop for Windows and make sure it runs through WSL2
-  - during the installation, ensure that the 'Enable WSL 2 Windows Features' is selected and click OK.
-  - once you've installed Docker, right-click the Docker whale icon in the system tray
-  - Click Settings > General, and verify that 'Use the WSL 2 based engine' is selected.
-  - Optionally, in Resources > WSL INTEGRATION, toggle your WSL distribution of choice to On, then click Apply & Restart to enable the use of docker commands in your WSL distro
+  - `wsl -l -v` to see your newly installed distro and the wsl version it uses
+  - `wsl -d Ubuntu-24.04` to start your Linux distro
+  - `sudo apt update` to refresh the list of available packages and their versions (from the configured repositories)
+  - `sudo apt upgrade` to update your Linux system
 
+Then, install Docker on your WSL Ubuntu machine:
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o docker.gpg
+sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+```
 
+**Explanation**:
+- the first line downloads Docker's GPG public key from the specified URL and saves it to a file named docker.gpg
+- the second line converts the downloaded 'docker.gpg' file from its ASCII armored format to a binary format and saves it as 'docker-archive-keyring.gpg' in the '/usr/share/keyrings/' directory.
+  - `gpg --dearmor` converts the ASCII armored key file to a binary format suitable for use by APT (Advance Package Tool)
+  - The `-o` option is for specifying the output file location
+  - `/usr/share/keyrings/`is the standard location for storing APT repository keys
+- the `echo` line is a bit more complex:
+  - adds a new entry to your APT sources list, pointing to the official Docker repository.
+  - The entry includes your system's architecture, the Ubuntu codename, the repository URL, and the path to the GPG key used to verify the packages.
+  - The `tee` command is used to write the entry to the docker.list file, and any output to the terminal is suppressed.
+  - the last line updates the APT package lists, making APT aware of the packages available in the newly added Docker repository.
 
+These 4 commands work together to securely add the official Docker repository to your Ubuntu system.  
+This allows you to then use `apt install docker-ce` (or similar) to install Docker Engine and related components from the official source, ensuring you get verified and up-to-date packages.
 
 
 
