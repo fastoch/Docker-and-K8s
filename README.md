@@ -228,10 +228,17 @@ The Docker application provides:
 
 ---
 
-# Running Docker
+# installing and using Docker
 
-- install WSL2 if you're running Windows 10 or 11, so you can run a Linux system within Windows
-- 
+- install and enable WSL2 if you're running Windows 10 or 11, so you can run a Linux system within Windows
+  - you can easily find detailed procedures on the Web
+  - open Windows terminal, and run `wsl -l --online` to see all available distros
+  - install your distro of choice, for example: `wsl --install Ubuntu-24.04`
+- then, install Docker Desktop for Windows and make sure it runs through WSL2
+  - during the installation, ensure that the 'Enable WSL 2 Windows Features' is selected and click OK.
+  - once you've installed Docker, right-click the Docker whale icon in the system tray
+  - Click Settings > General, and verify that 'Use the WSL 2 based engine' is selected.
+  - Optionally, in Resources > WSL INTEGRATION, toggle your WSL distribution of choice to On, then click Apply & Restart to enable the use of docker commands in your WSL distro
 
 
 
