@@ -239,7 +239,11 @@ if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system w
   - `sudo apt update` to refresh the list of available packages and their versions (from the configured repositories)
   - `sudo apt upgrade` to update your Linux system
 
-Then, install Docker on your WSL Ubuntu machine:
+We are ready to install Docker on your WSL Ubuntu machine.  
+First, let's install a few prerequisite packages which let apt use packages over HTTPS:  
+`sudo apt install apt-transport-https ca-certificates curl software-properties-common`
+
+After that, run the following commands:
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o docker.gpg
 sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg docker.gpg
@@ -261,6 +265,14 @@ sudo apt update
 
 These 4 commands work together to securely add the official Docker repository to your Ubuntu system.  
 This allows you to then use `apt install docker-ce` (or similar) to install Docker Engine and related components from the official source, ensuring you get verified and up-to-date packages.
+
+Finally, install Docker:  
+`sudo apt install docker-ce`  
+
+Docker should now be installed, the daemon started, and the process enabled to start on boot.  
+Check that it’s running: `sudo systemctl status docker`  
+The output should be showing that the service is active and running.  
+
 
 
 
