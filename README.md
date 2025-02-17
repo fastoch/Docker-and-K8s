@@ -202,7 +202,12 @@ Think GitHub but for containers.
 The most popular one is certainly the **Docker Hub** - https://hub.docker.com  
 It provides public and private repositories.  
 
-All major cloud providers such as AWS, GCP, or Azure have container registry services.  
+All major Cloud providers such as AWS, GCP, or Azure have container registry services.  
+
+## Orchestrator
+
+An orchestrator allows us to manage, scale, and monitor the containers that we run on our servers.  
+You can install your own orchestrator, or you can use a managed cluster offered by a Cloud provider.  
 
 
 
