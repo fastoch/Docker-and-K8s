@@ -122,11 +122,18 @@ Businesses want:
 
 ## Cloud Native Architecture characteristics
 
-- infrastructure becomes immutable and disposable, meaning we never do updates, we just put the infrastructure down and we replace it with a new one
-- the provisioning of a new infrastructure happens in minutes, and the existing one can be destroyed as fast, this process can even be automated
+- infrastructure becomes immutable and disposable, meaning we never perform updates, we just put the infrastructure down and we replace it with a new one
+- the provisioning of a new infrastructure happens in minutes, and the existing ones can be destroyed as fast, this process can even be automated
+
+## Roadmap to Cloud Native
+
+- Your team must first learn how to containerize your application
+- you need to automate deployments through the use of CI/CD (continuous integration/continuous delivery)
+  - so that changes to your source code automatically result in a new container being built, tested, and deployed to staging and, eventually, to production
+- you need to use an orchestrator (K8s is the market-leading orchestration solution)
 - 
 
 
-@18/356 (5%)
+@19/356 (5%)
 ---
 EOF
