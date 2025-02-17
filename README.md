@@ -228,9 +228,11 @@ The Docker application provides:
 
 ---
 
-# installing and using Docker
+# installing Docker
 
-if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system within Windows. You can easily find detailed procedures on the Web.
+## Windows Subsystem for Linux
+
+if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system within Windows. You can easily find detailed tutorials on the Web.
 
   - once WSL2 has been enabled, open Windows Terminal, and run `wsl -l --online` to see all available distros
   - install your distro of choice, for example: `wsl --install Ubuntu-24.04`
@@ -239,7 +241,10 @@ if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system w
   - `sudo apt update` to refresh the list of available packages and their versions (from the configured repositories)
   - `sudo apt upgrade` to update your Linux system
 
-We are ready to install Docker on your WSL Ubuntu machine.  
+## install Docker on your WSL machine
+
+We are now ready to install Docker on your WSL Ubuntu machine.  
+
 First, let's install a few prerequisite packages which let apt use packages over HTTPS:  
 `sudo apt install apt-transport-https ca-certificates curl software-properties-common`
 
@@ -273,10 +278,21 @@ Docker should now be installed, the daemon started, and the process enabled to s
 Check that it’s running: `sudo systemctl status docker`  
 The output should be showing that the service is active and running.  
 
+---
+
+# Docker CLI
+
+## First useful commands
+
+```bash
+sudo docker version
+sudo docker info
+```
 
 
 
 
-@35/356 (10%)
+
+@37/356 (10%)
 ---
 EOF
