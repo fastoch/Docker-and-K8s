@@ -3,6 +3,7 @@
 **Resources**:
 - https://www.youtube.com/watch?v=kTp5xUtcalw
 - https://github.com/K8sAcademy/Fundamentals-HandsOn
+- https://www.cncf.io/
 
 ---
 
@@ -127,13 +128,29 @@ Businesses want:
 
 ## Roadmap to Cloud Native
 
-- Your team must first learn how to containerize your application
-- you need to automate deployments through the use of CI/CD (continuous integration/continuous delivery)
-  - so that changes to your source code automatically result in a new container being built, tested, and deployed to staging and, eventually, to production
-- you need to use an orchestrator (K8s is the market-leading orchestration solution)
-- 
+- Your team must first learn how to containerize your applications
+- then you need to automate deployments through the use of CI/CD (continuous integration/continuous delivery) tools
+  - so that changes to your source code automatically result in a new container being built, tested, and deployed to staging, and eventually to production
+- you need to use an orchestrator (Kubernetes, also referred to as "K8s", is the market-leading orchestration solution)
+- observability: you need to pick solutions for monitoring, logging and tracing, so you can understand what's happening in your **K8s clusters**
+- use **services meshes** to provide more functionalities inside your cluster
+
+---
+
+# Containers Concepts
+
+- A container is a unit of software/deployment. It contains everything needed for your application to run
+- containers are typically lightweight, which makes them easier and faster to deploy than a complete monolithic application
+- containers use fewer resources, therefore you can deploy many of them on the same server
+- when using CI/CD techniques (automation), containers are even faster to deploy
+- you can run containers **anywhere**, you don't need to worry about compatibility since containers are self-sufficient (autonomous)
+- containers are isolated from each other and from the host system, which is better for security and for limiting the impact in case of failure
 
 
-@19/356 (5%)
+
+
+
+
+@25/356 (7%)
 ---
 EOF
