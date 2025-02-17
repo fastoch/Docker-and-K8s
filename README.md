@@ -10,6 +10,7 @@
 # Setup
 
 In this course, we will use VS Code with the Docker extension.  
+
 We also need to install Docker and Kubernetes (K8s). On Arch Linux, you need to:
 - update the system,
 - install the docker packages,
@@ -209,12 +210,35 @@ All major Cloud providers such as AWS, GCP, or Azure have container registry ser
 An orchestrator allows us to manage, scale, and monitor the containers that we run on our servers.  
 You can install your own orchestrator, or you can use a managed cluster offered by a Cloud provider.  
 
+Before we can talk about K8s and other orchestrators, we need a better knowledge of containers...
+
+---
+
+# What is Docker?
+
+initial release was in 2013
+
+Docker is the company behind the eponymous containerization platform.  
+Docker maintains the "moby" project, which is an open-source container runtime.  
+
+The Docker application provides: 
+- a container runtime that runs on Mac, Windows and Linux
+- a command-line tool to create and manage containers
+- a 'dockerfile' format for building container images
+
+---
+
+# Running Docker
+
+- install WSL2 if you're running Windows 10 or 11, so you can run a Linux system within Windows
+- 
 
 
 
 
 
 
-@30/356 (8%)
+
+@35/356 (10%)
 ---
 EOF
