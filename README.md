@@ -334,6 +334,10 @@ docker rm [containerName]
 - The fourth one stops the specified running container
 - the last one removes the specified containers from the Docker host (it doesn't remove the images)
 
+**Note**: You need to stop a container before removing it with `docker rm [containerName]`  
+
+You can also remove all containers with `docker rm $(docker ps -a -q)`
+
 ## imageName vs containerName
 
 - imageName = name of the image you've pulled from the container registry
@@ -380,9 +384,22 @@ docker rmi [imageName]
 docker system prune -a
 ```
 
+## Run an Web server inside a Docker container
+
+```bash
+docker run -d -p 8080:80 --name webserver nginx
+```
+When you run this command, Docker will:
+- Pull the Nginx image from Docker Hub if it's not already present on your system.
+- Create a new container based on this image.
+- Start the container in detached mode, meaning it runs in the background.
+- Set up port forwarding from the host's port 8080 to the container's port 80.
+- Name the container "webserver".
+- The Nginx web server inside the container will then be accessible from your host machine at http://localhost:8080
 
 
 
-@45/356 (12%)
+
+@46/356 (12%)
 ---
 EOF
