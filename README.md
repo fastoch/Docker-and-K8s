@@ -287,12 +287,15 @@ The output should be showing that the service is active and running.
 ```bash
 sudo docker version
 sudo docker info
+docker login -u fastoch
 ```
 
 
 
 
 
-@37/356 (10%)
+
+
+@40/356 (11%)
 ---
 EOF
