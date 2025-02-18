@@ -400,6 +400,6 @@ When you run this command, Docker will:
 
 
 
-@46/356 (12%)
+@48/356 (13%)
 ---
 EOF
