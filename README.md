@@ -282,20 +282,57 @@ The output should be showing that the service is active and running.
 
 # Docker CLI
 
+## Run docker commands without sudo
+
+- add your user to the docker group: `sudo usermod -aG docker $USER`
+  - `-a` ensures that the user is added to the specified group (docker) without being removed from other groups they might already belong to
+- Log out and log back in for the group changes to take effect
+
 ## First useful commands
 
 ```bash
-sudo docker version
-sudo docker info
+docker version
+docker info
 docker login -u fastoch
 ```
 
+**Note**:  
+When running `docker info`, you will get some warnings.  
+These warnings are not errors and can typically be ignored for most Docker users.   
+They indicate that your system's kernel does not support certain block I/O (blkio) throttling features for Docker containers.  
+The "blkio" subsystem is used in larger Docker production environments to control I/O limits on block devices.   
+For standard Docker usage, especially for beginners or non-production environments, these warnings do not impact functionality.
+
+## Other important commands
+
+```bash
+docker pull [imageName]
+docker run [imageName]
+docker run -d [imageName]
+docker image inspect [imageName]
+```
+- The first lets you pull an image from a registry
+  - The image is downloaded from Docker Hub unless another registry is explicitly specified
+  - If no tag is specified, Docker uses the `:latest` tag by default
+  - You can also specify a particular version or tag: `docker pull ubuntu:24.04`
+- The second command lets you run a container built from the specified image
+- The third command does the same but runs the container in **detached** mode, so you can keep using your terminal
+
+## Yet more docker commands
+
+```bash
+docker ps
+docker ps -a
+docker start [containerName]
+docker stop [containerName]
+```
+- The first cmd lists running containers
+- The seconde one lists running and stopped containers
+- The third one starts the specified container
 
 
 
 
-
-
-@40/356 (11%)
+@41/356 (11%)
 ---
 EOF
