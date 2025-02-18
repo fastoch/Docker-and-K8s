@@ -331,6 +331,8 @@ docker rm [containerName]
 - The first cmd lists running containers
 - The seconde one lists running and stopped containers
 - The third one starts the specified container
+- The fourth one stops the specified running container
+- the last one removes the specified containers from the Docker host (it doesn't remove the images)
 
 ## imageName vs containerName
 
@@ -341,16 +343,46 @@ docker rm [containerName]
 
 Let's say we have downloaded the Nginx image (a popular Web server)
 ```bash
-docker run --publish 80:80 --name webserver  nginx
+docker run --publish 80:80 --name webserver nginx
 ```
-- we specify the image name as found in the Docker registry (nginx)
-- we sepcify a name for the running instance (webserver)
+- we specify the image name as found in the Docker registry (imageName = nginx)
+- we sepcify a name for the running instance (containerName = webserver)
 - we use the `--publish` flag to map the host port to the container listening port
 
+## The `-it` options
+
+We can run a Docker container in **interactive** mode with a terminal attached.  
+For example, we can start an Ubuntu container and give it a bash shell to interact with:
+```bash
+docker run -it ubuntu /bin/bash
+```
+`-i`: Keeps STDIN open even if not attached, allowing interactive input  
+`-t`: Allocates a pseudo-TTY, providing a terminal interface
+
+The `-it` options are commonly used for development, testing, and troubleshooting purposes, as they provide immediate feedback and allow for real-time interaction with the containerized environment.
+
+## Attach a shell to a running container
+
+```bash
+docker container exec -it [containerName] bash
+```
+
+## List docker images & delete an image
+
+```bash
+docker images
+docker rmi [imageName]
+```
+
+## Remove all images not in use by any containers
+
+```bash
+docker system prune -a
+```
 
 
 
 
-@43/356 (12%)
+@45/356 (12%)
 ---
 EOF
