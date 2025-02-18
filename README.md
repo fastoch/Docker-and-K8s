@@ -317,6 +317,7 @@ docker image inspect [imageName]
   - You can also specify a particular version or tag: `docker pull ubuntu:24.04`
 - The second command lets you run a container built from the specified image
 - The third command does the same but runs the container in **detached** mode, so you can keep using your terminal
+- The last one can be very useful for debugging purposes
 
 ## Yet more docker commands
 
@@ -325,14 +326,31 @@ docker ps
 docker ps -a
 docker start [containerName]
 docker stop [containerName]
+docker rm [containerName]
 ```
 - The first cmd lists running containers
 - The seconde one lists running and stopped containers
 - The third one starts the specified container
 
+## imageName vs containerName
+
+- imageName = name of the image you've pulled from the container registry
+- containerName = name of the running container (built from that image)
+
+## Practical example
+
+Let's say we have downloaded the Nginx image (a popular Web server)
+```bash
+docker run --publish 80:80 --name webserver  nginx
+```
+- we specify the image name as found in the Docker registry (nginx)
+- we sepcify a name for the running instance (webserver)
+- we use the `--publish` flag to map the host port to the container listening port
 
 
 
-@41/356 (11%)
+
+
+@43/356 (12%)
 ---
 EOF
