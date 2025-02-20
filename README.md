@@ -236,9 +236,9 @@ if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system w
 You can easily find detailed tutorials on the Web.
 
   - once WSL2 has been enabled, open Windows Terminal, and run `wsl -l --online` to see all available distros
-  - install your distro of choice, for example: `wsl --install Ubuntu-24.04`
+  - install your distro of choice, for example: `wsl --install Ubuntu`
   - `wsl -l -v` to see your newly installed distro and the wsl version it uses
-  - `wsl -d Ubuntu-24.04` to start your Linux distro
+  - `wsl -d Ubuntu` to start your Linux distro
   - `sudo apt update` to refresh the list of available packages and their versions (from the configured repositories)
   - `sudo apt upgrade` to update your Linux system
 
