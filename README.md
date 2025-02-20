@@ -1,9 +1,9 @@
 # Docker Containers & Kubernetes Fundamentals
 
 **Resources**:
-- https://www.youtube.com/watch?v=kTp5xUtcalw
-- https://github.com/K8sAcademy/Fundamentals-HandsOn
-- https://www.cncf.io/
+- The course: https://www.youtube.com/watch?v=kTp5xUtcalw
+- The repository: https://github.com/K8sAcademy/Fundamentals-HandsOn
+- Cloud Native Computing Foundation: https://www.cncf.io/
 
 ---
 
