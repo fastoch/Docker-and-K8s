@@ -351,7 +351,7 @@ Let's run an Nginx container (a very popular Web server)
 docker run --publish 80:80 --name webserver nginx
 ```
 - we specify the image name as found in the Docker registry (imageName = nginx)
-- we sepcify a name for the running instance (containerName = webserver)
+- we specify a name for the running instance (containerName = webserver)
 - we use the `--publish` flag to map the host port to the container listening port
 
 ## The `-it` options
