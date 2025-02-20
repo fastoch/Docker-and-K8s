@@ -332,10 +332,10 @@ docker rm [containerName]
 - The seconde one lists running and stopped containers
 - The third one starts the specified container
 - The fourth one stops the specified running container
-- the last one removes the specified containers from the Docker host (it doesn't remove the images)
+- the last one removes the specified containers from the Docker host (it doesn't remove the corresponding images)
 
 **Note**:  
-- You need to stop a container before removing it
+- You need to stop a container before you can remove it
 - You can also remove all containers with `docker rm $(docker ps -a -q)`
 
 ## imageName vs containerName
@@ -371,12 +371,14 @@ The `-it` options are commonly used for development, testing, and troubleshootin
 docker container exec -it [containerName] bash
 ```
 
-## List docker images & delete an image
+## List docker images & delete a Docker image
 
 ```bash
 docker images
 docker rmi [imageName]
 ```
+
+The `rmi` command will delete all the layers of the specified image.
 
 ## Remove all images not in use by any containers
 
@@ -389,6 +391,7 @@ docker system prune -a
 ```bash
 docker run -d -p 8080:80 --name webserver nginx
 ```
+
 When you run this command, Docker will:
 - Pull the Nginx image from Docker Hub if it's not already present on your system.
 - Create a new container based on this image.
@@ -397,13 +400,19 @@ When you run this command, Docker will:
 - Name the container "webserver".
 - The Nginx web server inside the container will then be accessible from your host machine at http://localhost:8080
 
-After that, if we stopped the container, we can start it back up via `docker start [containerName]`, the container name being 'webserver' in our example.  
+## Restart an existing container and attach a shell to it
+
+After that, if we have stopped the container, we can start it back up via `docker start [containerName]`, the container name being 'webserver' in our example.  
 And then, we can attach a bash shell to it via `docker container exec -it webserver bash`.  
 When running the last command, the prompt will change, going from `[userName]@[localhost]` to `root@[containerID]`.  
 
+Attaching a shell to a container is super **useful** for troubleshooting purposes.  
+
+You need to run `exit` to exit the container and go back to your local host.  
 
 
 
-@48/356 (13%)
+
+@51/356 (14%)
 ---
 EOF
