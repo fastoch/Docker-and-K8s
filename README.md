@@ -394,7 +394,7 @@ docker run -d -p 8080:80 --name webserver nginx
 ```
 
 When you run this command, Docker will:
-- Pull the Nginx image from Docker Hub if it's not already present on your system.
+- Pull the Nginx image from the Docker Hub if it's not already present on your system.
 - Create a new container based on this image.
 - Start the container in detached mode, meaning it runs in the background.
 - Set up port forwarding from the host's port 8080 to the container's port 80.
@@ -424,7 +424,7 @@ docker build -t [name:tag] .
 
 To build an image using a dockerfile located in a different folder: 
 ```bash
-docker build -t [name:tag] -f [fileName]
+docker build -t [name:tag] -f [fileLocation]
 ```
 
 To tag an existing image:
@@ -444,11 +444,33 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html
 ```
 
-- The FROM command specifies the base image
+- The FROM command specifies the **base image**. When building a docker image, you always start from something already existing.
+  - In this case, we start with an image of the nginx web server running inside Alpine, a lightweight and security-focused Linux distribution
+- The COPY command copies everything from the current folder to a folder inside the container
+
+## Building the image
+
+```bash
+docker build -t webserver-image:v1 .
+```
+We're running the command from the folder where the file is, hence the dot to specify the file location.  
+
+## Running the container
+
+```bash
+docker run -d -p 8080:80 webserver-imae:v1
+```
+
+## Display the web server
+
+```bash
+curl localhost:8080
+```
 
 
 
 
-@52/356 (14%)
+
+@53/356 (14%)
 ---
 EOF
