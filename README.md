@@ -334,9 +334,9 @@ docker rm [containerName]
 - The fourth one stops the specified running container
 - the last one removes the specified containers from the Docker host (it doesn't remove the images)
 
-**Note**: You need to stop a container before removing it with `docker rm [containerName]`  
-
-You can also remove all containers with `docker rm $(docker ps -a -q)`
+**Note**:  
+- You need to stop a container before removing it
+- You can also remove all containers with `docker rm $(docker ps -a -q)`
 
 ## imageName vs containerName
 
@@ -345,7 +345,7 @@ You can also remove all containers with `docker rm $(docker ps -a -q)`
 
 ## Practical example
 
-Let's say we have downloaded the Nginx image (a popular Web server)
+Let's run an Nginx container (a very popular Web server)
 ```bash
 docker run --publish 80:80 --name webserver nginx
 ```
@@ -384,7 +384,7 @@ docker rmi [imageName]
 docker system prune -a
 ```
 
-## Run an Web server inside a Docker container
+## Run a Web server inside a Docker container
 
 ```bash
 docker run -d -p 8080:80 --name webserver nginx
@@ -396,6 +396,10 @@ When you run this command, Docker will:
 - Set up port forwarding from the host's port 8080 to the container's port 80.
 - Name the container "webserver".
 - The Nginx web server inside the container will then be accessible from your host machine at http://localhost:8080
+
+After that, if we stopped the container, we can start it back up via `docker start [containerName]`, the container name being 'webserver' in our example.  
+And then, we can attach a bash shell to it via `docker container exec -it webserver bash`.  
+When running the last command, the prompt will change, going from <username>@<localhost> to root@<container_ID>.  
 
 
 
