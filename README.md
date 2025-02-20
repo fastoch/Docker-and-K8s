@@ -399,7 +399,7 @@ When you run this command, Docker will:
 
 After that, if we stopped the container, we can start it back up via `docker start [containerName]`, the container name being 'webserver' in our example.  
 And then, we can attach a bash shell to it via `docker container exec -it webserver bash`.  
-When running the last command, the prompt will change, going from <username>@<localhost> to root@<container_ID>.  
+When running the last command, the prompt will change, going from [userName]@[localhost] to root@[containerID].  
 
 
 
