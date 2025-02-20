@@ -266,7 +266,7 @@ sudo apt update
   - adds a new entry to your APT sources list, pointing to the official Docker repository.
   - The entry includes your system's architecture, the Ubuntu codename, the repository URL, and the path to the GPG key used to verify the packages.
   - The `tee` command is used to write the entry to the docker.list file, and any output to the terminal is suppressed.
-  - the last line updates the APT package lists, making APT aware of the packages available in the newly added Docker repository.
+- the last line updates the APT package lists, making APT aware of the packages available in the newly added Docker repository.
 
 These 4 commands work together to securely add the official Docker repository to your Ubuntu system.  
 This allows you to then use `apt install docker-ce` (or similar) to install Docker Engine and related components from the official source, ensuring you get verified and up-to-date packages.
