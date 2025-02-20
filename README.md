@@ -403,16 +403,51 @@ When you run this command, Docker will:
 ## Restart an existing container and attach a shell to it
 
 After that, if we have stopped the container, we can start it back up via `docker start [containerName]`, the container name being 'webserver' in our example.  
+
 And then, we can attach a bash shell to it via `docker container exec -it webserver bash`.  
+
 When running the last command, the prompt will change, going from `[userName]@[localhost]` to `root@[containerID]`.  
 
 Attaching a shell to a container is super **useful** for troubleshooting purposes.  
 
 You need to run `exit` to exit the container and go back to your local host.  
 
+---
+
+## Docker CLI - Building containers
+
+To build an image using a dockerfile located in the same folder:  
+```bash
+docker build -t [name:tag] .
+```
+
+To build an image using a dockerfile located in a different folder: 
+```bash
+docker build -t [name:tag] -f [fileName]
+```
+
+To tag an existing image:
+```bash
+docker tag [imageName] [name:tag]
+```
+
+Taggings have 2 parts: a name and a tag. The tag is usually used to specify the version number.  
+
+---
+
+# What is a dockerfile?
+
+It's a text file listing the steps to build an image. Here's a simple example:
+```dockerfile
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+```
+
+- The FROM command specifies the base image
 
 
 
-@51/356 (14%)
+
+@52/356 (14%)
 ---
 EOF
