@@ -232,7 +232,8 @@ The Docker application provides:
 
 ## Windows Subsystem for Linux
 
-if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system within Windows. You can easily find detailed tutorials on the Web.
+if you're running Windows 10 or 11, enable WSL2, so you can run a Linux system within Windows.  
+You can easily find detailed tutorials on the Web.
 
   - once WSL2 has been enabled, open Windows Terminal, and run `wsl -l --online` to see all available distros
   - install your distro of choice, for example: `wsl --install Ubuntu-24.04`
