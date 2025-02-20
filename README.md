@@ -286,7 +286,7 @@ The output should be showing that the service is active and running.
 ## Run docker commands without sudo
 
 - add your user to the docker group: `sudo usermod -aG docker $USER`
-  - `-a` ensures that the user is added to the specified group (docker) without being removed from other groups they might already belong to
+  - `-a` ensures the user is added to the specified group without being removed from other groups they already belong to
 - Log out and log back in for the group changes to take effect
 
 ## First useful commands
