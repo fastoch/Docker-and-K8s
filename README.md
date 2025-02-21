@@ -522,6 +522,17 @@ wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor 
 ```bash
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 ```
+- Update the package list again and update the packages:
+```bash
+sudo apt update
+sudo apt upgrade
+```
+- Install VS Code:
+```bash
+sudo apt install code
+```
+
+Once installed, you can launch VS Code from your WSL Ubuntu terminal by simply typing `code`.
 
 ### About importing Microsoft GPG key
 
