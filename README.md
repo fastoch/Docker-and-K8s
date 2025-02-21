@@ -504,13 +504,15 @@ VS Code is a text/code editor, it's free and open-source software (FOSS), it run
 
 ## VS Code + WSL2
 
+https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
+
 To use Visual Studio Code with the Windows Subsystem for Linux: 
 - install Visual Studio Code in Windows
-- Install the Remote Development extension pack in VS Code
+- Install the **'Remote Development'** extension pack in VS Code
   - This includes the WSL extension, which enables seamless integration between VS Code and WSL
-- Click the green Remote Window button in the bottom-left corner of VS Code.
-- Choose "Remote-WSL: New Window" from the pop-up menu.
-- A new VS Code instance will open, showing "WSL: Ubuntu" (or your Linux distro) in the status bar
+- Click the **'Remote Explorer'** button in the left side bar.
+- Choose "WSL targets" and open your WSL distro of choice.
+- After that, Ctrl + J to open a Linux terminal from within VS Code
 
 This setup allows you to:
 - Develop in a Linux-based environment while using Windows.
@@ -524,15 +526,39 @@ By combining WSL2 and VS Code, you can enjoy a seamless development experience t
 
 - Go to File -> Open Folder and navigate to your project directory within the WSL 2 filesystem (usually found in /home/yourusername/)
 
+---
+
 ## Use Docker inside VS Code
 
 Once you have installed VS Code, press **Ctrl + Shift + X** and install the Docker extension.  
-Then, press **Ctrl + Shift + P** to open the **Command Palette** and type 'docker add' > select 'add docker files to workspace'.  
+
+## Automatic creation of Docker files
+
+This extension lets you add Docker files to your projects.  
+
+- Open a project folder in VS Code
+- press **Ctrl + Shift + P** to open the **Command Palette**
+- type 'docker add'
+- select '**add docker files to workspace**'
+- the Docker extension will ask you a few questions, and will create the Docker files for you, such as:
+  - .dockerignore
+  - docker-compose.yml
+  - Dockerfile
+
+## The Docker extension UI
+
+The Docker extension helps you manage your containers from within VS Code.  
+Click the Docker icon on the left and you can see your images, your container, and your registries.  
+From there, you can interact with your containers and images by right-clicking them.  
+
+---
+
+## Containerize via VS Code
+
+Let's use VS Code to containerize a Node.js/Express application.
 
 
 
-
-
-@56/356 (15%)
+@58/356 (16%)
 ---
 EOF
