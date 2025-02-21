@@ -438,7 +438,7 @@ Taggings have 2 parts: a name and a tag. The tag is usually used to specify the 
 
 # What is a dockerfile?
 
-It's a text file listing the steps to build an image. Here's a simple example:
+It's a text file listing the steps to build an image. Here's a very basic example:
 ```dockerfile
 FROM nginx:alpine
 COPY . /usr/share/nginx/html
@@ -461,7 +461,7 @@ We're running the command from the folder where the dockerfile is, hence the dot
 docker run -d -p 8080:80 webserver-image:v1
 ```
 
-## A more complex example
+## A more complex dockerfile
 
 The following dockerfile is used to create an image from which the container will run a Node.js application:
 
@@ -484,8 +484,38 @@ ENRTYPOINT ["node", "./app.js"]
 - line 7 = when the container starts, it will run the Node.js runtime, then the app.js file in the current directory will be executed
   - This setup is common for Node.js applications, where app.js often serves as the main entry point for the application
 
+---
+
+# Tagging
+
+Using the `docker tag` command, we name an already existing image using a name and (optionnally) a tag.  
+If we don't specify a repository, it will default to Docker Hub.  
+
+Later on, we'll see how to push custom images to different repositories.  
+
+---
+
+# VS Code
+
+## What is VS Code?
+
+Let's see how Visual Studio Code can help us build images and run containers.  
+VS Code is a text/code editor, it's free and open-source software (FOSS), it runs on Windows, Mac and Linux.  
+
+## install VS Code
+
+Let's install it in our Ubuntu WSL machine:
+- 
+
+## Use Docker inside VS Code
+
+Once you have installed VS Code, press **Ctrl + Shift + X** and install the Docker extension.  
+Then, press **Ctrl + Shift + P** to open the **Command Palette** and type 'docker add' > select 'add docker files to workspace'.  
 
 
-@54/356 (15%)
+
+
+
+@56/356 (15%)
 ---
 EOF
