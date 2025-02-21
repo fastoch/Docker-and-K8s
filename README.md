@@ -502,53 +502,27 @@ Later on, we'll see how to push custom images to different repositories.
 Let's see how Visual Studio Code can help us build images and run containers.  
 VS Code is a text/code editor, it's free and open-source software (FOSS), it runs on Windows, Mac and Linux.  
 
-## install VS Code
+## VS Code + WSL2
 
-Let's install it in our Ubuntu WSL machine:
-- Open your Ubuntu WSL terminal.
-- Update your package list and upgrade existing packages:
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-- Install required dependencies:
-```bash
-sudo apt install software-properties-common apt-transport-https wget -y
-```
-- Import the Microsoft GPG key:
-```bash
-wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg
-```
-- Add the VS Code repository:
-```bash
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-```
-- Update the package list again and update the packages:
-```bash
-sudo apt update
-sudo apt upgrade
-```
-- Install VS Code:
-```bash
-sudo apt install code
-```
+To use Visual Studio Code with the Windows Subsystem for Linux: 
+- install Visual Studio Code in Windows
+- Install the Remote Development extension pack in VS Code
+  - This includes the WSL extension, which enables seamless integration between VS Code and WSL
+- Click the green Remote Window button in the bottom-left corner of VS Code.
+- Choose "Remote-WSL: New Window" from the pop-up menu.
+- A new VS Code instance will open, showing "WSL: Ubuntu" (or your Linux distro) in the status bar
 
-Once installed, you can launch VS Code from your WSL Ubuntu terminal by simply typing `code`.
+This setup allows you to:
+- Develop in a Linux-based environment while using Windows.
+- Use Linux-specific tools and utilities.
+- Run and debug Linux-based applications from VS Code.
+- Take advantage of VS Code features like IntelliSense, debugging, and Git integration.
 
-### About importing Microsoft GPG key
+By combining WSL2 and VS Code, you can enjoy a seamless development experience that leverages the strengths of both Windows and Linux.
 
-- `wget`: This is a command-line utility used to download files from the internet.
-- `-O-`: This option tells wget to write the downloaded content to standard output (stdout) instead of to a file. The hyphen (-) signifies standard output.
-- `https://packages.microsoft.com/keys/microsoft.asc`: This is the URL from which wget will download a file. In this case, it's a Microsoft GPG public key file.
-- `|`: The pipe symbol | takes the standard output from the command on the left and feeds it as standard input to the command on the right.
-- `sudo gpg --dearmor`
-  - `gpg`: This is the GNU Privacy Guard, a command-line tool used for encryption and decryption. It can also manage public keys.
-  - `--dearmor`: This option tells gpg to convert the "armored" ASCII format of the public key (which is what you typically see when you download a key file) into a binary (unarmored) format that gpg can use internally.
-  - The standard input, coming from wget, is the armored key.
-- `sudo tee /usr/share/keyrings/vscode.gpg`
-  - `tee`: This command reads from standard input and writes to both standard output and to a file.
-  - `/usr/share/keyrings/vscode.gpg`: This is the file path where tee will save the dearmored GPG key. The .gpg extension is a common convention for GPG key files.
-  - The keyrings directory is a standard location for storing GPG keys used for verifying software packages.
+## Open your project folder
 
+- Go to File -> Open Folder and navigate to your project directory within the WSL 2 filesystem (usually found in /home/yourusername/)
 
 ## Use Docker inside VS Code
 
