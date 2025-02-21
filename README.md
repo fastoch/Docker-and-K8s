@@ -471,13 +471,21 @@ RUN apk add -update nodejs nodejs-npm
 COPY . /src
 WORKDIR /src
 RUN npm install
+EXPOSE 8080
+ENRTYPOINT ["node", "./app.js"]
 ```
 
-- First line = base image = Alpine Linux
-- Line 2 = 
+- First line specifies the base image = Alpine Linux
+- Line 2 = install Node and npm using the Alpine Linux package manager
+- line 3 = copy the current folder contents (local host) to /src folder (container)
+- line 4 = define the working directory as /src, equivalent to run `cd /src`
+- line 5 = use npm (node package manager) to install dependencies required for our Node.js app
+- line 6 = tells the container to listen on port 8080
+- line 7 = when the container starts, it will run the Node.js runtime, then the app.js file in the current directory will be executed
+  - This setup is common for Node.js applications, where app.js often serves as the main entry point for the application
 
 
 
-@53/356 (14%)
+@54/356 (15%)
 ---
 EOF
