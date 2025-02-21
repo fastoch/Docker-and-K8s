@@ -453,21 +453,28 @@ COPY . /usr/share/nginx/html
 ```bash
 docker build -t webserver-image:v1 .
 ```
-We're running the command from the folder where the file is, hence the dot to specify the file location.  
+We're running the command from the folder where the dockerfile is, hence the dot to specify the file location.  
 
 ## Running the container
 
 ```bash
-docker run -d -p 8080:80 webserver-imae:v1
+docker run -d -p 8080:80 webserver-image:v1
 ```
 
-## Display the web server
+## A more complex example
 
-```bash
-curl localhost:8080
+The following dockerfile is used to create an image from which the container will run a Node.js application:
+
+```dockerfile
+FROM alpine
+RUN apk add -update nodejs nodejs-npm
+COPY . /src
+WORKDIR /src
+RUN npm install
 ```
 
-
+- First line = base image = Alpine Linux
+- Line 2 = 
 
 
 
